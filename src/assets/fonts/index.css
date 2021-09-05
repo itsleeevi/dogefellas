@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "prstart";
+  src: url("prstart.ttf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  font-weight: bold;
+  src: url("RedThinker-Bold.otf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  font-weight: bold;
+  font-style: italic;
+  src: url("RedThinker-BoldItalic.otf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  font-style: italic;
+
+  src: url("RedThinker-Italic.otf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  font-weight: 300;
+
+  src: url("RedThinker-Light.otf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  font-style: italic;
+  font-weight: 300;
+  src: url("RedThinker-LightItalic.otf");
+}
+
+@font-face {
+  font-family: "RedThinker";
+  src: url("RedThinker-Regular.otf");
+}
+
+@font-face {
+  font-family: "AlfaSlabOne-Regular";
+  src: url("AlfaSlabOne-Regular.ttf");
+}

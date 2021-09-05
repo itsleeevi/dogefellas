@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="364" height="290" viewBox="0 0 364 290">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#42a459"/>
+      <stop offset="1" stop-color="#3d6f43"/>
+    </linearGradient>
+  </defs>
+  <g id="Green_Box" data-name="Green Box" transform="translate(-616 -400)">
+    <g id="Green_BG" data-name="Green BG">
+      <path id="Path_106" data-name="Path 106" d="M1.713,9.7l10.1-5.1,3.45-1.65L16.64,1.04,348.963,2.85l6,3.1,6.1,3.05,1.1,271.338-7.15,3.6-6.05,3.1-332.944.469-6.75-3.325-6.275-3.2L0,13.625Z" transform="translate(616 400)" fill="url(#linear-gradient)"/>
+      <g id="Group_9" data-name="Group 9" transform="translate(395 16)">
+        <g id="Group_5" data-name="Group 5" transform="translate(221 393)">
+          <rect id="Rectangle_6077" data-name="Rectangle 6077" width="272" height="3" transform="translate(364) rotate(90)"/>
+          <rect id="Rectangle_6078" data-name="Rectangle 6078" width="272" height="3" transform="translate(3) rotate(90)"/>
+        </g>
+        <g id="Group_7" data-name="Group 7" transform="translate(224 384)">
+          <rect id="Rectangle_6074" data-name="Rectangle 6074" width="334" height="3" transform="translate(12)"/>
+          <g id="Group_4" data-name="Group 4" transform="translate(0 3)">
+            <g id="Group_2" data-name="Group 2">
+              <rect id="Rectangle_6075" data-name="Rectangle 6075" width="6" height="3" transform="translate(6)"/>
+              <rect id="Rectangle_6076" data-name="Rectangle 6076" width="6" height="3" transform="translate(0 3)"/>
+            </g>
+            <g id="Group_3" data-name="Group 3" transform="translate(346)">
+              <rect id="Rectangle_6075-2" data-name="Rectangle 6075" width="6" height="3"/>
+              <rect id="Rectangle_6076-2" data-name="Rectangle 6076" width="6" height="3" transform="translate(6 3)"/>
+            </g>
+          </g>
+        </g>
+        <g id="Group_8" data-name="Group 8" transform="translate(224 665)">
+          <rect id="Rectangle_6079" data-name="Rectangle 6079" width="334" height="3" transform="translate(12 6)"/>
+          <g id="Group_6" data-name="Group 6">
+            <g id="Group_2-2" data-name="Group 2">
+              <rect id="Rectangle_6075-3" data-name="Rectangle 6075" width="6" height="3" transform="translate(6 3)"/>
+              <rect id="Rectangle_6076-3" data-name="Rectangle 6076" width="6" height="3"/>
+            </g>
+            <g id="Group_3-2" data-name="Group 3" transform="translate(346)">
+              <rect id="Rectangle_6075-4" data-name="Rectangle 6075" width="6" height="3" transform="translate(0 3)"/>
+              <rect id="Rectangle_6076-4" data-name="Rectangle 6076" width="6" height="3" transform="translate(6)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
