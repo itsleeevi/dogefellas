@@ -1,7 +1,6 @@
 {
-  "name": "spirit-orb-pets",
+  "name": "dogefellas",
   "version": "0.2.0",
-  "homepage": "http://www.spiritorbpets.com",
   "private": true,
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
