@@ -1,14 +1,16 @@
 import "./App.css";
 import Routes from "./routes";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { updatePetsHeld, updatePetsAdopted } from "./components/connector";
+import { getMintedVouchers, updatePetsAdopted } from "./components/connector";
 import { useEffect, useState } from "react";
 
 function App() {
   const [connected, setConnected] = useState(false);
   const [accounts, setAccounts] = useState([]);
-  const [petsHeld, setPetsHeld] = useState([]);
+  const [mintedVouchers, setMintedVouchers] = useState([]);
   const [petsAdopted, setPetsAdopted] = useState(0);
+  const [level, setLevel] = useState("Select Level!");
+  const [levelToNumber, setLevelToNumber] = useState(0); // 0 - Legendary, 1 - Epic, 2 - Rare
   //let currentAccount = null;
 
   useEffect(() => {
@@ -18,8 +20,8 @@ function App() {
         setPetsAdopted(adoptedNumber);
       }
       if (accounts !== undefined && accounts.length > 0) {
-        await updatePetsHeld(accounts[0]).then((pets) => {
-          setPetsHeld(pets);
+        await getMintedVouchers(accounts[0]).then((vouchers) => {
+          setMintedVouchers(vouchers);
         });
       }
     };
@@ -32,8 +34,8 @@ function App() {
   useEffect(() => {
     if (accounts !== undefined && accounts.length > 0) {
       setConnected(true);
-      updatePetsHeld(accounts[0]).then((pets) => {
-        setPetsHeld(pets);
+      getMintedVouchers(accounts[0]).then((vouchers) => {
+        setMintedVouchers(vouchers);
       });
     } else {
       setConnected(false);
@@ -47,6 +49,10 @@ function App() {
     setAccounts(accs);
   };
 
+  const getImg = (id) => {
+    return "../nft/dgf/im/" + id + ".png";
+  };
+
   return (
     <div className="App">
       <Router>
@@ -55,8 +61,12 @@ function App() {
             connect={connect}
             connected={connected}
             accounts={accounts}
-            petsHeld={petsHeld}
+            mintedVouchers={mintedVouchers}
             petsAdopted={petsAdopted}
+            level={level}
+            setLevel={setLevel}
+            setLevelToNumber={setLevelToNumber}
+            levelToNumber={levelToNumber}
           />
         </Switch>
       </Router>

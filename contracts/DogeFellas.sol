@@ -6,11 +6,19 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DogeFellas is ERC721Enumerable, Ownable {
+    using Strings for uint256;
 
     string _baseTokenURI;
+    string public baseExtension = ".json";
     uint256 private _reservedVouchers = 50;
-    uint256 private _price = 0.07 ether;
+    uint256 private _priceLegendary = 1.2 ether;
+    uint256 private _priceEpic = 1 ether;
+    uint256 private _priceRare = 0.8 ether;
     bool public _paused = false;
+    uint256 public legendaryStart = 0;
+    uint256 public epicStart = 9;
+    uint256 public rareStart = 19;
+
 
 
     uint256 public constant TOTAL_VOUCHER_SUPPLY = 7777;
@@ -21,16 +29,39 @@ contract DogeFellas is ERC721Enumerable, Ownable {
     }
 
     constructor() ERC721("DogeFellas", "FELLAS") {
-      setBaseURI("http://localhost:3000/nft/dgf/md/");
+      setBaseURI("https://hairgrowthpro.com/metadata/");
     }
 
-    function mintVoucher() public payable {
+    function mintVoucher(uint256 mintAmount, uint256 level) public payable {
       uint256 supply = totalSupply();
-      require(!_paused, "Voucher sale has not yet begun.");
-      require(supply <= TOTAL_VOUCHER_SUPPLY, "Exceeds maximum vouchers available.");
-      require(_price == msg.value, "Amount of BNB sent is not correct.");
+      require(!_paused, "Voucher pre-sale has not yet begun.");
+      require(supply < TOTAL_VOUCHER_SUPPLY, "Voucher pre-sale has already ended.");
+      require(mintAmount > 0, "You cannot mint 0 vouchers.");
+      require(mintAmount <= 2, "You are not allowed to mint this many vouchers at once.");
+      require(supply + mintAmount <= TOTAL_VOUCHER_SUPPLY, "Exceeds maximum vouchers available.");
+      
 
-      _safeMint(msg.sender, supply+1);
+      if (level == 0) {
+        require(_priceLegendary * mintAmount == msg.value, "Amount of Ether sent is not correct.");
+        for (uint i = 0; i < mintAmount; i++) {
+          legendaryStart++;
+          _safeMint(msg.sender, legendaryStart);
+        }
+      }
+      if (level == 1) {
+        require(_priceEpic * mintAmount == msg.value, "Amount of Ether sent is not correct.");
+        for (uint i = 0; i < mintAmount; i++) {
+          epicStart++;
+          _safeMint(msg.sender, epicStart);
+        }
+      }
+      if (level == 2) {
+        require(_priceRare * mintAmount == msg.value, "Amount of Ether sent is not correct.");
+        for (uint i = 0; i < mintAmount; i++) {
+          rareStart++;
+          _safeMint(msg.sender, rareStart);
+        }
+      }
     }
 
     function walletOfOwner(address _owner) public view returns(uint256[] memory) {
@@ -43,8 +74,23 @@ contract DogeFellas is ERC721Enumerable, Ownable {
       return tokensId;
     }
 
-    function setPrice(uint256 _newPrice) public onlyOwner() {
-      _price = _newPrice;
+     function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+
+        string memory baseURI = _baseURI();
+        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString(), baseExtension)) : "";
+    }
+
+    function setLegendaryPrice(uint256 _newPrice) public onlyOwner() {
+      _priceLegendary = _newPrice;
+    }
+
+    function setEpicPrice(uint256 _newPrice) public onlyOwner() {
+      _priceEpic = _newPrice;
+    }
+
+    function setRarePrice(uint256 _newPrice) public onlyOwner() {
+      _priceRare = _newPrice;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
@@ -55,8 +101,16 @@ contract DogeFellas is ERC721Enumerable, Ownable {
       _baseTokenURI = baseURI;
     }
 
-    function getPrice() public view returns (uint256){
-      return _price;
+    function getLegendaryPrice() public view returns (uint256){
+      return _priceLegendary;
+    }
+
+    function getEpicPrice() public view returns (uint256){
+      return _priceEpic;
+    }
+
+    function getRarePrice() public view returns (uint256){
+      return _priceRare;
     }
 
     function setPause(bool val) public onlyOwner {

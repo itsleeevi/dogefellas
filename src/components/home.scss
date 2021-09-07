@@ -3,8 +3,6 @@
 
 }
 
-
-
 .top-bar {
   $topbar: 300px;
   
@@ -56,31 +54,6 @@
   }
 }
 
-.connect-button-section {
-  display: contents;
-
-  align-items: center;
-  .connect-button {
-    background-image: url("../assets/Adopt\ Button.svg");
-    background-size: 100% 100%;
-    padding: 15px 25px;
-    font-family: AlfaSlabOne-Regular;
-    cursor: pointer;
-    font-size: 100%;
-    color: #f1f2ff;
-    text-transform: uppercase;
-    font-weight: normal;
-    min-width: 150px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .connect-button:active {
-    position: relative;
-    top: 2px;
-  }
-}
 
 .pet-section {
   font-family: prstart;
@@ -142,7 +115,7 @@
   
 
   .description {
-    color: #4a5462;
+    color: #F8F8F8;
     text-align: justify;
     font-size: 120%;
     span {
@@ -291,9 +264,9 @@
 }
 
 .footer {
-  background: #c6d6ff;
+  background: #2D2102;
+  color: #F8F8F8;
   padding: 50px 0;
-  border: 1px solid #ffffff;
   position: relative;
   > img {
     width: 60%;
@@ -301,124 +274,11 @@
   }
 }
 
-.adopted-value {
-  background-image: url("../assets/Line1.png");
-  background-size: 100% 100%;
-  > img {
-    width: 80px;
-  }
-  > div {
-    font-family: prstart;
-    width: 33%;
-    font-size: 110%;
-    padding: 10px 0;
-    > div:first-child {
-      //   margin-bottom: 10px;
-      font-size: 120%;
-    }
-    > div:nth-child(2) {
-      color: #4a5462;
-      text-transform: uppercase;
-    }
-  }
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
+
 
 .home {
   padding-right: 20%;
   padding-left: 20%;
-}
-
-.roadmap {
-  background: #4b608b 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  padding: 80px 150px;
-
-  > .items:nth-child(odd) {
-    > .heading {
-      justify-content: flex-end;
-      span {
-        padding-right: 40px;
-        padding-bottom: 30px;
-      }
-
-      img {
-        transform: rotateY(180deg);
-      }
-    }
-  }
-  > .items:nth-child(even) {
-    > .heading {
-      span {
-        padding-left: 40px;
-        padding-bottom: 30px;
-      }
-    }
-  }
-
-  .items {
-    margin-top: 40px;
-    .description {
-      //   margin-top: 80px;
-      color: #f1f2ff;
-      text-align: justify;
-      font-size: 120%;
-    }
-    .heading {
-      position: relative;
-      font-weight: normal;
-      //   top: -70px;
-      //   float: left;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      color: #f1f2ff;
-      font-size: 170%;
-
-      font-family: prstart;
-      img {
-        position: absolute;
-      }
-    }
-  }
-  > div:first-child {
-    font-family: prstart;
-    color: #f1f2ff;
-    font-size: 300%;
-  }
-}
-
-.team {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 150px;
-  background: #c6d6ff;
-  border: 1px solid #707070;
-
-  > div:nth-child(2) > div:first-child {
-    font-family: prstart;
-    font-size: 300%;
-    color: #4a5462;
-    // width: 55%;
-    text-align: left;
-  }
-  > div:first-child {
-    padding: 0 6vw;
-
-    img {
-      width: 180px;
-      margin-top: 20px;
-    }
-  }
-  .description {
-    color: #4a5462;
-    text-align: justify;
-    font-size: 120%;
-  }
 }
 
 body {
@@ -521,18 +381,6 @@ body {
 }
 
 /* OBJECTS */
-.clouds {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  z-index: -1;
-}
-.cloud {
-  height: 90px;
-  position: relative;
-  width: 200px;
-}
-
 .ReactModal__Content {
   z-index: 300;
   inset: 34vh 25vw !important;
@@ -546,20 +394,6 @@ body {
   z-index: 500;
   backdrop-filter: blur(5px);
   background: rgba(0, 0, 0, 0.171) !important;
-}
-
-.bricks {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
-  padding: 0 100px; //   position: absolute;
-
-  img {
-    position: relative;
-    // top: -50px;
-    width: 10vw;
-    z-index: 1000;
-  }
 }
 
 .modal-view {
@@ -584,7 +418,7 @@ body {
     background: #4b608b;
     overflow: auto;
     .question {
-      font-family: prstart;
+      font-family: AlfaSlabOne-Regular;
       text-transform: uppercase;
       font-weight: normal;
       padding: 10px 50px;
@@ -619,24 +453,7 @@ body {
   }
 }
 
-.footer-ico {
-  position: absolute;
-  left: calc(50% + 80px);
-  width: 140px;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 
-  top: 0;
-  img {
-    margin: 0 10px;
-    // width: 80px;
-    margin-bottom: -60px;
-    height: 35px;
-    cursor: pointer;
-  }
-}
 
 .animate {
   box-sizing: inherit !important;
@@ -661,42 +478,8 @@ body {
   }
 }
 
-.adopt-popup {
-  background-image: url("../assets/Adopt\ Button.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  height: 100%;
-  width: calc(100% - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: prstart;
-  // font-size: 110%;
-  font-weight: normal;
-  line-height: 2;
-  color: white;
-  text-align: center;
-  padding: 20px 40px;
-  text-transform: uppercase;
-}
 
-.collection-popup {
-  background-image: url("../assets/Adopt\ Button.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  width: calc(100% - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: prstart;
-  // font-size: 110%;
-  font-weight: normal;
-  line-height: 2;
-  color: white;
-  text-align: center;
-  padding: 20px 40px;
-  text-transform: uppercase;
-}
+
 
 @media only screen and (max-width: 800px) {
   .app-body {
@@ -759,26 +542,7 @@ body {
       }
     }
   }
-  .team {
-    padding: 70px 5vw;
-    padding-left: 10px;
-    padding-top: 40px;
-    flex-direction: column;
-    > div:first-child {
-      width: 100px;
-      padding: 10px;
-      img {
-        width: 100px;
-        margin-left: 10px;
-      }
-    }
-    > div:nth-child(2) {
-      text-align: center;
-      > div {
-        text-align: center !important;
-      }
-    }
-  }
+
   .ReactModal__Content {
     inset: 30vh 2vw !important;
     overflow-x: hidden;
@@ -786,24 +550,6 @@ body {
   .adopted-value {
     img {
       width: 60px;
-    }
-  }
-  .footer-ico {
-    width: 15vw;
-    left: 60%;
-    img {
-      margin: 3px;
-      margin-bottom: -8vw;
-      width: 5vw;
-    }
-  }
-  .clouds {
-    display: none;
-  }
-  .bricks {
-    padding: 0 30px;
-    img {
-      width: 15vw;
     }
   }
   .modal-view {
@@ -829,9 +575,7 @@ body {
     padding-bottom: 20px !important;
   }
   .footer {
-    > img {
-      width: 100%;
-    }
+    color: "#F8F8F8"
   }
   .adopted-value {
     background-image: none;

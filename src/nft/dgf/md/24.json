@@ -1,1 +1,8 @@
-{"image":"http://localhost:3000/nft/dgf/im/24","tokenId":24,"name":"#24","description":"The official NFT voucher made by the $Fellas in the pursuit of financial independence.","external_link":"http://localhost:3000","attributes":[{"name":"Rare"}]}
+{
+  "image": "https://hairgrowthpro.com/metadata/24.png",
+  "tokenId": 24,
+  "name": "#24",
+  "description": "The official NFT voucher made by the $Fellas in the pursuit of financial independence.",
+  "external_link": "https://hairgrowthpro.com/",
+  "attributes": [{ "name": "Rare" }]
+}

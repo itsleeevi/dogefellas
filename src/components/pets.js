@@ -38,24 +38,6 @@ const Pets = (props) => {
     );
   };
 
-  const Stats = (hp, sp, str, dex, end, spr) => {
-    return (
-      <div>
-        <div className="col">LEVEL: 1</div>
-        <div className="col">HP: {hp}</div>
-        <div className="row">SP: {sp}</div>
-        <div className="row">STR: {str}</div>
-        <div className="row">DEX: {dex}</div>
-        <div className="row">END: {end}</div>
-        <div className="row">SPR: {spr}</div>
-      </div>
-    );
-  };
-
-  const viewPet = () => {
-    setpopOpened(true);
-  };
-
   const renderConnectButton = () => {
     if (!props.connected) {
       return (
@@ -79,6 +61,7 @@ const Pets = (props) => {
   };
 
   const showBoxes = () => {
+    console.log(props.petsHeld);
     let items = [];
 
     if (props.petsHeld !== undefined && props.petsHeld.length > 0) {
@@ -104,6 +87,7 @@ const Pets = (props) => {
       for (let i = firstPetToShowThisPage; i < lastPetToShowThisPage; i++) {
         //console.log(i);
         let id = `${props.petsHeld[i]}`;
+        console.log(props.petsHeld[i]);
         items.push(Box(id));
       }
     }
@@ -112,19 +96,6 @@ const Pets = (props) => {
   };
 
   const showPetsOwned = () => {
-    //updatePrice();
-    //getBalanceOf();
-    //updatePetsHeld();
-    //reserveGiveawayPets();
-    //getTokensOfOwner();
-    //console.log("PETS OWNED: " + state.petsHeld.length);
-    //for (let i = 0; i < state.petsHeld.length; i++) {
-    //  console.log(state.petsHeld[i]);
-    //}
-    // console.log(state.balanceOf);
-    //console.log(props.accounts.length);
-    //console.log(props.petsHeld.length);
-    //console.log(checkedPetsHeldOnPageLoad);
     if (
       props.accounts !== undefined &&
       props.accounts.length > 0 &&

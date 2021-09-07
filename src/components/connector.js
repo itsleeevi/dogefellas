@@ -3,7 +3,7 @@ import Web3 from "web3";
 import DogeFellas from "../artifacts/DogeFellas.json";
 
 //const contractAddress = "0x3920CF47282eb9553a921C5F5B41B006cF1E2Caa";
-const contractAddress = "0xBe9aA783395bEd56B1E33115141F485E35213c53";
+const contractAddress = "0x1f98Ce22C20D42dF9b5770632D583fFFa668EC9D";
 
 const web3 = new Web3(window.ethereum);
 
@@ -41,15 +41,12 @@ async function updateAllInfo() {
   if (window.contract === undefined) {
     window.contract = await loadContract();
   }
-  //await loadWeb3();
 }
 
 export async function updatePrice() {
   try {
     await updateAllInfo();
     state.price = await contract.methods.getPrice().call();
-    // console.log(`Price is ${state.price}.`);
-    // console.log(`PriceInEth is ${state.priceInEth}.`);
   } catch (error) {
     console.log(error);
   }
@@ -100,23 +97,54 @@ export async function getTokensOfOwner() {
   return state.petsHeld;
 }
 
-export async function updatePetsHeld(account) {
+export async function getMintedVouchers(account) {
   try {
-    //await updateAllInfo();
-
-    return await contract.methods.tokensOfOwner(account).call();
+    console.log(await contract.methods.walletOfOwner(account).call());
+    const vouchers = await contract.methods.walletOfOwner(account).call();
+    let array = [];
+    let level;
+    for (let i = 0; i < vouchers.length; i++) {
+      if (vouchers[i] <= 9) {
+        level = "Legendary";
+      } else if (vouchers[i] > 9 && vouchers[i] < 20) {
+        level = "Epic";
+      } else {
+        level = "Rare";
+      }
+      array.push({
+        id: "#" + vouchers[i],
+        image: require("../nft/dgf/im/" + vouchers[i] + ".png").default,
+        level: level,
+      });
+    }
+    return array;
   } catch (error) {
     console.log(error);
   }
 }
 
-export async function mintVoucher(account) {
+export async function mintVoucher(account, level) {
   try {
     await updateAllInfo();
     console.log("yo");
-    await contract.methods
-      .mintVoucher()
-      .send({ from: account, value: await getPrice() });
+    if (level === 0) {
+      const price = await contract.methods.getLegendaryPrice().call();
+      await contract.methods
+        .mintVoucher(1, level)
+        .send({ from: account, value: price });
+    }
+    if (level === 1) {
+      const price = await contract.methods.getEpicPrice().call();
+      await contract.methods
+        .mintVoucher(1, level)
+        .send({ from: account, value: price });
+    }
+    if (level === 2) {
+      const price = await contract.methods.getRarePrice().call();
+      await contract.methods
+        .mintVoucher(1, level)
+        .send({ from: account, value: price });
+    }
   } catch (error) {
     console.log(error);
   }
