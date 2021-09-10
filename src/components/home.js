@@ -147,10 +147,10 @@ const Home = (props) => {
                   size="large"
                 />
               </Grommet>
-              <Box /*animation={{ type: "pulse", size: "medium" }}*/>
+              <Box animation={{ type: "pulse", size: "medium" }}>
                 <Button
                   primary
-                  size="xlarge"
+                  size="large"
                   color="#BF0E0D"
                   label={
                     <Text size="xlarge" weight="normal">
@@ -167,10 +167,10 @@ const Home = (props) => {
             <Box align="center">
               <h2 align="center">Are you tired of living like a schnook?</h2>
 
-              <Box /*animation="pulse"*/>
+              <Box animation="pulse">
                 <Button
                   primary
-                  size="xlarge"
+                  size="large"
                   color="#BF0E0D"
                   label={
                     <Text size="xlarge" weight="normal">

@@ -227,69 +227,64 @@ function App() {
             )
           }
         </ResponsiveContext.Consumer>
-      </Grommet>
 
-      <Router>
-        <Switch>
-          <Routes
-            connect={connect}
-            connected={connected}
-            accounts={accounts}
-            mintedVouchers={mintedVouchers}
-            level={level}
-            setLevel={setLevel}
-            setLevelToNumber={setLevelToNumber}
-            levelToNumber={levelToNumber}
-          />
-        </Switch>
-      </Router>
-      <Footer
-        background="#2D2102"
-        justify="center"
-        pad="small"
-        direction="column"
-        gap="xsmall"
-      >
-        <Box direction="row">
-          <Box margin="5px" width="20px" height="20px">
-            <SocialIcon
-              network="twitter"
-              url="https://twitter.com/dogefellasbsc"
-              bgColor="#BF0E0D"
+        <Router>
+          <Switch>
+            <Routes
+              connect={connect}
+              connected={connected}
+              accounts={accounts}
+              mintedVouchers={mintedVouchers}
+              level={level}
+              setLevel={setLevel}
+              setLevelToNumber={setLevelToNumber}
+              levelToNumber={levelToNumber}
             />
-          </Box>
-          <Box margin="5px" width="20px" height="20px">
-            <SocialIcon
-              network="discord"
-              url="https://twitter.com/dogefellasbsc"
-              bgColor="#BF0E0D"
-            />
-          </Box>
-          <Box margin="5px" width="20px" height="20px">
-            <SocialIcon
-              network="telegram"
-              url="https://t.me/DogeFellas"
-              bgColor="#BF0E0D"
-            />
-          </Box>
-          <Box margin="5px" width="20px" height="20px">
-            <SocialIcon
-              network="medium"
-              url="https://medium.com/@dogefellasbsc"
-              bgColor="#BF0E0D"
-            />
-          </Box>
+          </Switch>
+        </Router>
+        <Box
+          className="top-header"
+          background="#2D2102"
+          direction="column"
+          justify="between"
+        >
+          <ResponsiveContext.Consumer>
+            {(size) =>
+              size === "small" ? (
+                <>
+                  <br />
+                  <Text textAlign="center" size="11px">
+                    The official NFT voucher made by the $Fellas in the pursuit
+                    of financial independence.
+                  </Text>
+                  <br />
+                  <Box align="start" alignSelf="center">
+                    <Text size="11px" textAlign="center">
+                      © 2021 Copyright Dogefellas
+                    </Text>
+                  </Box>
+                  <br />
+                </>
+              ) : (
+                <>
+                  <br />
+                  <Text textAlign="center" size="xsmall">
+                    The official NFT voucher made by the $Fellas in the pursuit
+                    of financial independence.
+                  </Text>
+
+                  <Box align="start" alignSelf="center">
+                    <Text size="xsmall" textAlign="center">
+                      © 2021 Copyright Dogefellas
+                    </Text>
+                  </Box>
+                  <br />
+                </>
+              )
+            }
+          </ResponsiveContext.Consumer>
         </Box>
-        <Text textAlign="center" size="small">
-          The official NFT voucher made by the $Fellas in the pursuit of
-          financial independence.
-        </Text>
-        <Box align="start" alignSelf="center">
-          <Text size="small" textAlign="center">
-            © 2021 Copyright Dogefellas
-          </Text>
-        </Box>
-      </Footer>
+      </Grommet>
     </>
   );
 }

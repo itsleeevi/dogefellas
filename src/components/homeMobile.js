@@ -27,6 +27,7 @@ import roadmap1 from "../assets/dogefellas_road_map1.png";
 import roadmap2 from "../assets/dogefellasroadmapnew.png";
 import video from "../assets/video.mp4";
 import { mintVoucher } from "./connector";
+import { SocialIcon } from "react-social-icons";
 
 const HomeMobile = (props) => {
   function Vouchers(props) {
@@ -118,7 +119,7 @@ const HomeMobile = (props) => {
         >
           <Grommet theme={deepMerge(grommet, customTheme)}>
             <Video
-              autoPlay={false}
+              autoPlay={true}
               loop={true}
               controls={false}
               mute={true}
@@ -136,6 +137,7 @@ const HomeMobile = (props) => {
             </Video>
           </Grommet>
         </Box>
+
         <Box
           id="vouchers"
           animation="zoomIn"
@@ -180,10 +182,10 @@ const HomeMobile = (props) => {
                   size="large"
                 />
               </Grommet>
-              <Box /*animation={{ type: "pulse", size: "medium" }}*/>
+              <Box animation={{ type: "pulse", size: "medium" }}>
                 <Button
                   primary
-                  size="xlarge"
+                  size="large"
                   color="#BF0E0D"
                   label="Mint Voucher!"
                   onClick={() =>
@@ -196,10 +198,10 @@ const HomeMobile = (props) => {
             <Box align="center">
               <h3 align="center">Are you tired of living like a schnook?</h3>
 
-              <Box /*animation="pulse"*/>
+              <Box animation="pulse">
                 <Button
                   primary
-                  size="xlarge"
+                  size="large"
                   color="#BF0E0D"
                   label={
                     <Text size="large" weight="normal" textAlign="center">

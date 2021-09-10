@@ -1,16 +1,12 @@
-
 .top-header {
-  padding-right: 20%;
-  padding-left: 20%;
-
+  padding-right: 21%;
+  padding-left: 19%;
+  position: relative;
+  
 }
 .top-bar {
   $topbar: 300px;
-  
-  margin: 30px 20px 20px 20px;
-
-  position: relative;
-  
+  margin: 20px 20px 20px 20px; 
 }
 
 .nav-bar {
@@ -19,14 +15,12 @@
   align-items: center;
   justify-content: center;
   color: #BF0E0D;
-  
   > div {
     margin: 0 10px;
     cursor: pointer;
     transition: all 0.2s linear;
   }
   > div:hover {
-
     color: #2D2102;
   }
   img {
@@ -34,13 +28,12 @@
     margin-bottom: -20px;
   }
 }
-
+ 
 .home {
+  padding-right: 20%;
+  padding-left: 20%;
   position: relative;
   background: #D4B580;
-  
-  
- 
 
   .block {
     position: relative;
@@ -72,35 +65,20 @@
           text-transform: uppercase;
           margin-right: 20px;
         }
-        > span {
-         
-        }
       }
     }
   }
   > div {
     margin: 0 0 40px;
   }
-  
-
-  
-  
 }
-
-.home {
-  padding-right: 20%;
-  padding-left: 20%;
-}
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 body {
-  // height: 100vh;
-   margin: 0;
-   padding: 0;
- 
+  margin: 0;
+  padding: 0;
   background:#D4B580;
   font-family: 'Alfa Slab One', cursive;
   letter-spacing: 0.1em;
@@ -128,7 +106,6 @@ h3 {
   0% {
     transform: scale(85%);
   }
-
   100% {
     transform: scale(100%);
   }
@@ -136,9 +113,7 @@ h3 {
 
 
 @media only screen and (max-width: 800px) {
-  .app-body {
-    overflow-x: hidden;
-  }
+  
   .nav-bar {
     font-size: 95%;
     img {
@@ -147,17 +122,14 @@ h3 {
   }
   body {
     font-size: 90%;
-    overflow-x: hidden;
+   
   }
   .home {
     padding: 2vw 7vw;
-
     .block {
       font-size: 80%;
       padding: 25px 0;
-      img {
-        width: 100vw;
-      }
+       
     }
   }
   .top-blocks {
@@ -173,42 +145,6 @@ h3 {
     align-items: center;
     justify-content: center;
     margin: 10px;
-    margin-top: 0;
-
-    
-  }
-
-  .ReactModal__Content {
-    inset: 30vh 2vw !important;
-    overflow-x: hidden;
-  }
-  .adopted-value {
-    img {
-      width: 60px;
-    }
-  }
-  .modal-view {
-    font-size: 90%;
-    > div:first-child {
-      width: 99vw;
-      height: 75vh;
-    }
-    > div:nth-child(2) {
-      width: 90vw;
-      height: 79vh;
-    }
-  }
-  
-  .footer {
-    color: "#F8F8F8"
-  }
-  .adopted-value {
-    background-image: none;
-    margin-left: -20px !important;
-    margin-right: -20px !important;
-    > div {
-      width: 50%;
-      font-size: 95%;
-    }
+    margin-top: 0;  
   }
 }

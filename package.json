@@ -20,6 +20,7 @@
     "react-scripts": "^4.0.3",
     "react-social-icons": "^5.6.1",
     "react-sticky": "^6.0.3",
+    "social-media-icons-react": "^1.1.7",
     "web-vitals": "^1.1.2",
     "web3": "^1.5.2"
   },
