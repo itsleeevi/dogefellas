@@ -1,20 +1,13 @@
 import Web3 from "web3";
+import Dogefellas from "../artifacts/Dogefellas.json";
 
-import DogeFellas from "../artifacts/DogeFellas.json";
-
-//const contractAddress = "0x3920CF47282eb9553a921C5F5B41B006cF1E2Caa";
 const contractAddress = "0x1f98Ce22C20D42dF9b5770632D583fFFa668EC9D";
-
 const web3 = new Web3(window.ethereum);
-
-const contract = new web3.eth.Contract(DogeFellas.abi, contractAddress);
+const contract = new web3.eth.Contract(Dogefellas.abi, contractAddress);
 
 export var state = {
-  //accounts: [],
   price: 0,
   balanceOf: 0,
-  //petsHeld: [],
-  //petsAdopted: 0,
 };
 
 export async function loadWeb3() {
@@ -28,10 +21,6 @@ export async function loadWeb3() {
           console.error(err);
         }
       });
-
-    //state.accounts = await window.ethereum.request({
-    //  method: "eth_accounts",
-    //});
   } catch (error) {
     console.log(error);
   }
@@ -52,28 +41,11 @@ export async function updatePrice() {
   }
 }
 
-async function getPrice() {
-  await updatePrice();
-  return state.price;
-}
-
-export async function updatePetsAdopted() {
-  try {
-    if (window.contract === undefined) {
-      window.contract = await loadContract();
-    }
-    return await contract.methods.totalSupply().call();
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 async function loadContract() {
   try {
     if (window.ethereum.eth === undefined) {
-      //await loadWeb3();
     } else {
-      return await new web3.eth.Contract(DogeFellas.abi, contractAddress);
+      return await new web3.eth.Contract(Dogefellas.abi, contractAddress);
     }
   } catch (error) {
     console.log(error);
@@ -145,26 +117,6 @@ export async function mintVoucher(account, level) {
         .mintVoucher(1, level)
         .send({ from: account, value: price });
     }
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export async function startAdoption(account) {
-  try {
-    await updateAllInfo();
-
-    await contract.methods.setPause(false).send({ from: account });
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export async function reserveGiveawayPets() {
-  try {
-    await updateAllInfo();
-
-    await contract.methods.reserveGiveaway().send({ from: state.accounts[0] });
   } catch (error) {
     console.log(error);
   }

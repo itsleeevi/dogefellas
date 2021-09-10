@@ -1,44 +1,25 @@
-.app-home {
-  line-height: 1.8;
+
+.top-header {
+  padding-right: 20%;
+  padding-left: 20%;
 
 }
-
 .top-bar {
   $topbar: 300px;
   
   margin: 30px 20px 20px 20px;
 
   position: relative;
-  > img:first-child {
-    width: $topbar;
-    
-  }
-  > div {
-    position: absolute;
-    left: calc(50% + #{$topbar}/ 2 + 80px);
-    width: 140px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    top: 0;
-    > img {
-      margin: 0 10px;
-      cursor: pointer;
-      
-    }
-  }
+  
 }
 
 .nav-bar {
-  font-family: AlfaSlabOne-Regular;
-  letter-spacing: 0.1em;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #BF0E0D;
-  margin-bottom: 20px;
+  
   > div {
     margin: 0 10px;
     cursor: pointer;
@@ -54,88 +35,24 @@
   }
 }
 
-
-.pet-section {
-  font-family: prstart;
-  color: #4a5462;
-}
-
-.pet-collection {
-  align-items: center;
-  justify-content: center;
-  display: grid;
-  margin: 2rem auto;
-  padding: 20px 20px;
-  border-spacing: 10px 10px;
-  grid-template-columns: 300px 300px 300px 300px 300px;
-  grid-template-rows: 300px 350px 300px 350px;
-  img {
-    border: 1px solid black;
-    width: 206px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    height: 206px;
-  }
-  > div {
-    background-color: #BBD0EE;
-    border: 2px solid #4a5462;
-    border-radius: 20px;
-    margin: 10px 10px;
-    > div {
-      margin: 2px 10px;
-    }
-  }
-}
-
-.page-selector-buttons {
-  font-family: prstart;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4a5462;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  .page-selector {
-    margin: 0 20px;
-    cursor: pointer;
-    transition: all 0.2s linear;
-  }
-  .page-selector:hover {
-    border-bottom: 4px solid #77d0ee;
-    color: black;
-  }
-}
-
 .home {
-
   position: relative;
-
   background: #D4B580;
-  padding-bottom: 40px;
   
-
-  .description {
-    color: #F8F8F8;
-    text-align: justify;
-    font-size: 120%;
-    span {
-      color: black;
-    }
-
-  }
+  
+ 
 
   .block {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 0px;
+ 
     img {
       position: absolute;
       height: 100%;
     }
     > div {
-      font-family: prstart;
       z-index: 100;
       text-align: left;
 
@@ -148,7 +65,7 @@
         margin: 5px 0;
    
         > span:first-child {
-          color: #4a5462;
+          color: #2D2102;
           display: inline-block;
           width: 50%;
           text-align: left;
@@ -156,316 +73,55 @@
           margin-right: 20px;
         }
         > span {
-          width: 50%;
+         
         }
       }
     }
   }
   > div {
-    margin: 40px 0;
+    margin: 0 0 40px;
   }
-  > .top-blocks {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    > div {
-      width: 40%;
-      img {
-        width: 100%;
-      }
-    }
+  
 
-    .adopt-block:hover {
-      transform: scale(1.05);
-    }
-
-    .adopt-blocks {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-
-      .adopt-pets {
-        background-image: url("../assets/Adopt\ Button.svg");
-        background-size: 100% 100%;
-        padding: 15px 25px;
-        font-family: prstart;
-        cursor: pointer;
-        font-size: 100%;
-        color: #f1f2ff;
-        text-transform: uppercase;
-        font-weight: normal;
-        min-width: 150px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .adopt-pets:active {
-        position: relative;
-        top: 2px;
-      }
-      > img:first-child {
-        position: absolute;
-      }
-      > div {
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        // margin: 20px;
-        padding: 20px;
-        padding-bottom: 5px;
-        flex-wrap: wrap;
-        > div:nth-child(2) {
-          margin-right: 15%;
-        }
-        > div:nth-child(1) {
-          margin-left: 15%;
-        }
-        > div {
-          width: 28%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          margin: 3% 1%;
-          > img {
-            width: 90%;
-          }
-          > span {
-            position: absolute;
-            font-family: prstart;
-
-            color: white;
-            font-size: 180%;
-          }
-        }
-      }
-    }
-  }
-  //   background: #77d0ee;
-  .home-tree {
-    position: absolute;
-    bottom: 0;
-    right: 30px;
-    height: 100px;
-  }
-  .home-back {
-    margin-top: -50px;
-
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+  
+  
 }
-
-.footer {
-  background: #2D2102;
-  color: #F8F8F8;
-  padding: 50px 0;
-  position: relative;
-  > img {
-    width: 60%;
-    min-width: 350px;
-  }
-}
-
-
 
 .home {
   padding-right: 20%;
   padding-left: 20%;
 }
 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 body {
   // height: 100vh;
-  // margin: 0;
-  // padding: 0;
-  overflow-x: hidden;
+   margin: 0;
+   padding: 0;
+ 
   background:#D4B580;
-  font-family: AlfaSlabOne-Regular;
+  font-family: 'Alfa Slab One', cursive;
   letter-spacing: 0.1em;
   font-weight: normal;
 }
 
-/* KEYFRAMES */
+h1 {
+  font-weight: normal;
+  font-size: 55px;
 
-@-webkit-keyframes animateCloud {
-  0% {
-    margin-left: -100vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
+}
+h2 {
+  font-weight: normal;
+  font-size: 45px;
+  line-height: 45px;
 }
 
-@-moz-keyframes animateCloud {
-  0% {
-    margin-left: -100vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
-}
-
-@keyframes animateCloud {
-  0% {
-    margin-left: -100vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
-}
-
-@-webkit-keyframes animateCloud2 {
-  0% {
-    margin-left: -180vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
-}
-
-@-moz-keyframes animateCloud2 {
-  0% {
-    margin-left: -180vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
-}
-
-@keyframes animateCloud2 {
-  0% {
-    margin-left: -180vw;
-  }
-  100% {
-    margin-left: 100%;
-  }
-}
-
-/* ANIMATIONS */
-
-.x1 {
-  -webkit-animation: animateCloud 45s linear infinite;
-  -moz-animation: animateCloud 45s linear infinite;
-  animation: animateCloud 45s linear infinite;
-  -webkit-transform: scale(0.65);
-  -moz-transform: scale(0.65);
-  transform: scale(0.9);
-}
-
-.x2 {
-  -webkit-animation: animateCloud2 55s linear infinite;
-  -moz-animation: animateCloud2 55s linear infinite;
-  animation: animateCloud2 55s linear infinite;
-
-  -webkit-transform: scale(0.7);
-  -moz-transform: scale(0.7);
-  transform: scale(0.7);
-}
-.x3 {
-  -webkit-animation: animateCloud2 35s linear infinite;
-  -moz-animation: animateCloud2 35s linear infinite;
-  animation: animateCloud2 35s linear infinite;
-
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
-  top: -100px;
-  position: relative;
-}
-
-/* OBJECTS */
-.ReactModal__Content {
-  z-index: 300;
-  inset: 34vh 25vw !important;
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-}
-.ReactModal__Overlay {
-  z-index: 500;
-  backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.171) !important;
-}
-
-.modal-view {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: #f1f2ff;
-  z-index: 1000;
-
-  > div:first-child {
-    position: absolute;
-    width: 74vw;
-    height: 76vh;
-    background: #4b608b;
-  }
-  > div:nth-child(2) {
-    width: 80vw;
-    height: 68vh;
-    z-index: 100;
-    background: #4b608b;
-    overflow: auto;
-    .question {
-      font-family: AlfaSlabOne-Regular;
-      text-transform: uppercase;
-      font-weight: normal;
-      padding: 10px 50px;
-      cursor: pointer;
-      padding-top: 20px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      img {
-        transition: all 0.2s linear;
-        margin-right: 150px;
-      }
-    }
-    .answer {
-      padding: 10px 50px;
-      padding-bottom: 30px;
-      color: #f1f2ff;
-      text-align: justify;
-      font-size: 120%;
-    }
-    > div:first-child {
-      font-size: 300%;
-      font-family: prstart;
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: normal;
-
-      color: #f1f2ff;
-      margin: 20px;
-    }
-  }
-}
-
-
-
-.animate {
-  box-sizing: inherit !important;
-  // width: 90%;
-  position: relative;
-  margin-bottom: 20px;
-  animation-name: stretch;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
+h3 {
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 @keyframes stretch {
@@ -479,14 +135,12 @@ body {
 }
 
 
-
-
 @media only screen and (max-width: 800px) {
   .app-body {
     overflow-x: hidden;
   }
   .nav-bar {
-    font-size: 75%;
+    font-size: 95%;
     img {
       width: 70px;
     }
@@ -494,12 +148,6 @@ body {
   body {
     font-size: 90%;
     overflow-x: hidden;
-  }
-  .roadmap {
-    padding: 70px 7vw;
-  }
-  .team {
-    padding: 70px 7vw;
   }
   .home {
     padding: 2vw 7vw;
@@ -527,20 +175,7 @@ body {
     margin: 10px;
     margin-top: 0;
 
-    > img {
-      width: 100% !important;
-    }
-    > div {
-      position: relative;
-      right: 0px;
-      width: 100px;
-      margin-bottom: 10px;
-      left: initial;
-      > img {
-        width: 40px;
-        margin: 2px;
-      }
-    }
+    
   }
 
   .ReactModal__Content {
@@ -563,17 +198,7 @@ body {
       height: 79vh;
     }
   }
-  .question {
-    padding: 10px !important;
-    line-height: 1.5;
-    img {
-      margin-right: 0px !important;
-    }
-  }
-  .answer {
-    padding: 10px !important;
-    padding-bottom: 20px !important;
-  }
+  
   .footer {
     color: "#F8F8F8"
   }

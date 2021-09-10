@@ -1,5 +1,5 @@
-var DogeFellas = artifacts.require("./DogeFellas.sol");
+var Dogefellas = artifacts.require("./Dogefellas.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(DogeFellas);
+  deployer.deploy(Dogefellas);
 };
